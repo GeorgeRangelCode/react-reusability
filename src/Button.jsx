@@ -1,6 +1,6 @@
 const Button = (props) => {
-  const { text } = props;
-  return <button>{text}</button>;
+  const { children } = props;
+  return <button>{children}</button>;
 };
 
 export default Button;
