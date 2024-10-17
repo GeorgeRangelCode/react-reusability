@@ -1,18 +1,26 @@
 import Button from "./Button";
-import { FaMoneyBill } from "react-icons/fa";
+import { FcGoogle } from "react-icons/fc";
 
 /**
- * Challenge: Add the "FaMoneyBill" icon to the left
- * of the "Buy now!" text in the button
+ * Challenge: Add an onClick handler to the Button
+ * component instance (the one on this page). Then
+ * make whatever changes you need for it to actually
+ * work.
+ *
+ * Clicking the button should log "Logging in..."
+ * to the console.
  */
 
 function App() {
+  const handleClick = () => {
+    console.log("Logging in...");
+  };
+
   return (
     <main>
-      <Button>
-        {/*Icon goes here*/}
-        <FaMoneyBill />
-        Buy now!
+      <Button handleClick={handleClick}>
+        <FcGoogle />
+        Log in with Google
       </Button>
     </main>
   );
