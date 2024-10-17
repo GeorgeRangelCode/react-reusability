@@ -1,15 +1,19 @@
 import Button from "./Button";
+import { FaMoneyBill } from "react-icons/fa";
 
 /**
- * Challenge: Make the Button accept and display children.
- *
- * Change the text to say "Buy now!" so it's less boring 🥱
+ * Challenge: Add the "FaMoneyBill" icon to the left
+ * of the "Buy now!" text in the button
  */
 
 function App() {
   return (
     <main>
-      <Button>Buy now!</Button>
+      <Button>
+        {/*Icon goes here*/}
+        <FaMoneyBill />
+        Buy now!
+      </Button>
     </main>
   );
 }
