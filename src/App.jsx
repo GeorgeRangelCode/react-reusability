@@ -8,7 +8,7 @@ function App() {
 
   return (
     <main>
-      <Button style={{ color: "green" }} onClick={onClick}>
+      <Button size="sm" className="green" onClick={onClick}>
         <FcGoogle />
         Log in with Google
       </Button>
