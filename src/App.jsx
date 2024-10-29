@@ -1,24 +1,13 @@
-import Button from "./Button";
-import { FcGoogle } from "react-icons/fc";
+import Avatar from "./components/Avatar";
 
 function App() {
-  const onClick = () => {
-    console.log("Logging in...");
-  };
-
   return (
     <main>
-      <Button variant="success" size="lg" className="green" onClick={onClick}>
-        <FcGoogle />
-        Log in with Google
-      </Button>
-      <Button variant="warning" size="sm" className="green" onClick={onClick}>
-        Log in with Google
-      </Button>
-      <Button variant="danger" className="green" onClick={onClick}>
-        Log in with Google
-      </Button>
-      <Button>Log in with Google</Button>
+      <Avatar src="./images/bob.jpg" alt="Bob Ziroll" />
+      <br />
+      <Avatar>BZ</Avatar>
+      <br />
+      <Avatar />
     </main>
   );
 }
