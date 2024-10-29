@@ -1,15 +1,18 @@
 import classnames from "classnames";
 
-const Button = ({ children, size, className, ...rest }) => {
+const Button = ({ children, size, variant, className, ...rest }) => {
   /**
-   * Challenge: See if you can fix the problem with the
-   * conflicting `className` props. Doesn't need to be
-   * elegant, just see if you can get the button to be
-   * both large AND with green text
+   * Challenge:
+   *
+   * Accept a `variant` prop and style the Button component
+   * accordingly. The values can be `success`, `warning`, or `danger`.
+   * Check the Figma design for the specific colors to be used for each
+   * variant.
    */
 
-  let sizeClass = size ? `button-${size}` : "";
-  const allClassNames = classnames(sizeClass, className);
+  let sizeClass = size && `button-${size}`;
+  let variantClass = variant && `button-${variant}`;
+  const allClassNames = classnames(sizeClass, variantClass, className);
 
   return (
     <button {...rest} className={allClassNames}>

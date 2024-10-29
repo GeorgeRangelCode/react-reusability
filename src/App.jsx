@@ -8,10 +8,17 @@ function App() {
 
   return (
     <main>
-      <Button size="lg" className="green" onClick={onClick}>
+      <Button variant="success" size="lg" className="green" onClick={onClick}>
         <FcGoogle />
         Log in with Google
       </Button>
+      <Button variant="warning" size="sm" className="green" onClick={onClick}>
+        Log in with Google
+      </Button>
+      <Button variant="danger" className="green" onClick={onClick}>
+        Log in with Google
+      </Button>
+      <Button>Log in with Google</Button>
     </main>
   );
 }
