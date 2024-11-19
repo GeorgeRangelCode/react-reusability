@@ -1,37 +1,29 @@
-import React from "react";
+import React, { createContext } from "react";
+
+/**
+ * Challenge:
+ * Part 1:
+ * 1. Create new context here in the Menu component. Make sure
+ *    to export it from this file as well.
+ * 2. Wrap the `div` below with the Context Provider
+ * 3. Give the Provider a value of the boolean `false` (represents
+ *    the hardcoded `open` state for now - we'll fix this very soon.)
+ */
+
+const MenuContext = createContext();
 
 export default function Menu({ children }) {
   const [open, setOpen] = React.useState(true);
 
   function toggle() {
-    console.log("Toggled");
     setOpen((prevOpen) => !prevOpen);
   }
 
-  /**
-   * Challenge: figure out what needs to be passed to the
-   * children so they'll have access to new props!
-   */
-
-  /**
-   * Challenge:
-   * Now that MenuButton and MenuDropdown are receiving
-   * `open` and `toggle`, accept the necessary props in
-   * those components and refactor them to use those props
-   * to make the menu work again!
-   *
-   * Hint: in MenuDropdown, you'll need to use conditional
-   * rendering to either display the div OR display `null`
-   */
-
   return (
-    <div className="menu">
-      {React.Children.map(children, (child) => {
-        return React.cloneElement(child, {
-          open,
-          toggle,
-        });
-      })}
-    </div>
+    <MenuContext.Provider value={true}>
+      <div className="menu">{children}</div>
+    </MenuContext.Provider>
   );
 }
+
+export { MenuContext };

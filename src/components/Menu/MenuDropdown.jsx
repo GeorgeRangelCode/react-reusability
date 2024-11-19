@@ -1,16 +1,14 @@
-import React from "react";
+import { useContext } from "react";
+import { MenuContext } from "./Menu";
 
-export default function MenuDropdown({ children, open, toggle }) {
-  /** Discovery Challenge:
-   * Make it so the children of MenuDropdown also have
-   * access to toggle and open.
-   */
+/**
+ * Challenge part 2:
+ * Pull in the value from context and update the conditional
+ * rendering code below to use that value instead of `open`,
+ * which used to be passed down via props.
+ */
 
-  return open ? (
-    <div className="menu-dropdown">
-      {React.Children.map(children, (child) => {
-        return React.cloneElement(child, { toggle, open });
-      })}
-    </div>
-  ) : null;
+export default function MenuDropdown({ children }) {
+  const value = useContext(MenuContext);
+  return value ? <div className="menu-dropdown">{children}</div> : null;
 }
